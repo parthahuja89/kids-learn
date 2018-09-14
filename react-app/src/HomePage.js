@@ -2,18 +2,8 @@ import React, { Component } from 'react';
 import { Navbar, NavDropdown ,MenuItem, Nav, NavItem, bootStrapUtils} from 'react-bootstrap';
 import './App.css';
 import socketIOClient from "socket.io-client";
-import {BrowserRouter, Route} from 'react-router-dom';
-import About from './components/About'
-const local = () => {
-return(
-<div>
-  <p>
-    redirected
-    </p>
-</div>
-);
-}
-class App extends Component {
+import {NavLink} from 'react-router-dom';
+class HomePage extends Component {
   constructor(){
   super();
   this.state = {
@@ -30,10 +20,7 @@ socket.on('reception', function(data){
 
             socket.emit('emit', 'myemit')
 }
-this.handleClick = ev =>{
-  
 
-}
 }
 
 //sending stuff
@@ -45,12 +32,7 @@ this.handleClick = ev =>{
 
 
    <div className = 'container'>
-    <BrowserRouter>
- <Route
- path='/red'
- Component={local}
- />
- </BrowserRouter>
+
    <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
@@ -84,7 +66,9 @@ this.handleClick = ev =>{
 
   <div className='games'>
   <div className = 'Puzzles card-text'>
+   <NavLink to='/about'> 
   PUZZLES
+  </NavLink>
   </div>
   <div className = 'math-games'>
   MATH GAMES
@@ -98,6 +82,4 @@ this.handleClick = ev =>{
   )
 }
 }
-
-
-export default App;
+export default HomePage;
