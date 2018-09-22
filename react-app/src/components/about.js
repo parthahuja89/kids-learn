@@ -1,7 +1,23 @@
 import React from "react";
-import { Navbar, NavDropdown ,MenuItem, Nav, NavItem, Panel} from 'react-bootstrap';
-import './About.css'
+import {form, Button , FormGroup, FormControl ,Navbar, NavDropdown ,MenuItem, Nav, NavItem, Panel} from 'react-bootstrap';
+import './About.css';
 class about extends React.Component{
+constructor(props, context){
+super(props, context);
+this.handle_name = this.handle_name.bind(this);
+
+this.state={ 
+  value: ''
+};
+}
+getValidationState() {
+  return null;
+}
+
+handle_name(e){
+  this.setState({ value: e.target.value });
+  console.log(e.target.value);
+}
 render(){
 return (
 <div> 
@@ -49,10 +65,28 @@ return (
 </Panel.Title> 
  </Panel.Heading>
  <Panel.Body> 
-   What should we call you?    
+   Enter your name: 
+   
+   <form>
+        <FormGroup
+          controlId="formBasicText"
+          validationState={this.getValidationState()}
+        >
+          <FormControl
+            type="text"
+            value={this.state.value}
+            onChange={this.handle_name}
+          />
+          <FormControl.Feedback />
+        </FormGroup>
+       <Button 
+        onClick = {this.handle_submit} 
+       > Submit</Button>
+       
+      </form>
+      
 </Panel.Body> 
 </Panel>
-
 <Panel className = 'Panel-score'> 
  <Panel.Heading>
  <Panel.Title id = 'score_board-text'> 

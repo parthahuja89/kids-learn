@@ -1,0 +1,37 @@
+.row{
+    display: flex;
+    position: realtive;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+    background-color: #00264C;
+    height: 455px;
+    width: 45%;
+    text-align: center;
+}
+.card-new{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.Panel{
+    position: relative;
+    border-style: solid;
+    border-width: 2px;
+    top: -455px;
+    left: 805px;
+    height: 455px;
+    width: 25%;
+    
+} 
+.Panel-score{
+    position: relative;
+    border-style: solid;
+    border-width: 2px;
+    top: -930px;
+    left: 15px;
+    height: 455px;
+    width: 26%;
+    
+} 
