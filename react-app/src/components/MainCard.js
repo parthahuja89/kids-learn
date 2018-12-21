@@ -6,11 +6,16 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
+import './card.css'
 
 const styles = {
   card: {
-    minHeight: 100,
-    minWidth: 40,
+    marginTop: 150,
+    marginLeft: 350,
+    height: 300,
+    width: 500,
+    alignContent: 'center',
   },
   bullet: {
     display: 'inline-block',
@@ -18,7 +23,8 @@ const styles = {
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+
+    fontSize: 20,
   },
   pos: {
     marginBottom: 12,
@@ -52,7 +58,7 @@ function MainCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+         <Chip label="3982" className={classes.chip} />
       </CardActions>
     </Card>
   );
