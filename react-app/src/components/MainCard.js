@@ -6,61 +6,105 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import classNames from 'classnames';
 import Chip from '@material-ui/core/Chip';
+import PlayIcon from '@material-ui/icons';
+import IconButton from '@material-ui/core/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+import AddIcon from '@material-ui/icons/NavigateNext';
+import Fab from '@material-ui/core/Fab';
 import './card.css'
 
 const styles = {
   card: {
-    marginTop: 150,
-    marginLeft: 350,
-    height: 300,
-    width: 500,
-    alignContent: 'center',
+    marginTop: '10%',
+    marginLeft: '35%',
+    width: '400px',
+    height: '425px',
+    fontSize: 30,
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
+    fontSize: 30,
   },
   title: {
-
-    fontSize: 20,
+    textAlign: 'center',
+    fontSize: 30,
   },
   pos: {
+    textAlign: 'center',
     marginBottom: 12,
+    fontSize: 17,
+  },
+  textField: {
+    marginLeft:  '34%',
+  },
+
+  dense: {
+    marginTop: 16,
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  fab: {
+    marginLeft: '42%',
+    marginTop: '20%',
   },
 };
+
+const stylesIcon = theme => ({
+  fab: {
+    margin: theme.spacing.unit * 2,
+  },
+  absolute: {
+    position: 'absolute',
+    bottom: theme.spacing.unit * 2,
+    right: theme.spacing.unit * 3,
+  },
+});
 
 function MainCard(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
+    <div>
     <Card className={classes.card}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+        <Typography className={classes.title} variant="h5" component="h2">
+          Welcome!
         </Typography>
       </CardContent>
-      <CardActions>
-         <Chip label="3982" className={classes.chip} />
-      </CardActions>
+             <form className={classes.container} noValidate autoComplete="off">
+             <TextField
+                  id="standard-read-only-input"
+                  label="Read Only"
+                  defaultValue="Hello World"
+                  className={classes.textField}
+                  margin="normal"
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                />
+         <TextField
+            id="standard-dense"
+            label="Dense"
+            className={classNames(classes.textField, classes.dense)}
+            margin="dense"
+          />
+     </form>
+
+{/* icon for the next page nav */}
+
+   <Fab color="secondary" className={classes.fab}>
+     <AddIcon />
+   </Fab>
     </Card>
+    </div>
   );
 }
 

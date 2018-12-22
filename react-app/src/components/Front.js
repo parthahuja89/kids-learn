@@ -8,10 +8,6 @@ class Front extends React.Component{
   render(){ return (
     <div>
     <Navigation />
-      <Button variant="contained" color="primary">
-      Hello World
-    </Button>
-
     <MainCard />
     </div>
   );
