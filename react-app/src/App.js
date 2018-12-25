@@ -7,6 +7,8 @@ import Chat from './components/Chat';
 import Front from './components/Front';
 import MainCard from './components/MainCard';
 import MainApp from './components/MainApp';
+import ChatBox from './components/ChatBox'
+import ListView from './components/chatcomponents/ListView';
 
 class App extends React.Component {
   render() {
@@ -18,6 +20,8 @@ class App extends React.Component {
         <Route exact path='/about' component={About}/>
         <Route exact path='/chat' component = {Chat} />
         <Route exact path='/Main_App' component = {MainApp} />
+        <Route exact path='/ChatBox' component = {ChatBox} />
+        <Route exact path='/ListView' component = {ListView} />
         </div>
       </Router>
     );

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -67,6 +68,9 @@ const stylesIcon = theme => ({
   },
 });
 
+function RouteThis(){
+
+}
 function MainCard(props) {
   const { classes } = props;
   const bull = <span className={classes.bullet}>•</span>;
@@ -98,10 +102,15 @@ function MainCard(props) {
           />
      </form>
 
-{/* icon for the next page nav */}
+   {/*
+    icon for the next page nav
+    redirect to the app page
+    */}
 
-   <Fab color="secondary" className={classes.fab}>
+   <Fab color="secondary" className={classes.fab}
+   >
      <AddIcon />
+
    </Fab>
     </Card>
     </div>
